@@ -60,7 +60,23 @@ FROM Rooms R
     INNER JOIN Colleges C ON R.cid = C.cid
 GROUP BY R.cid;
 
---9. All colleges
+--9. Students with special needs who live on floor 2 
+SELECT S.sid,
+    S.name,
+    Sw.sickness
+FROM Students S
+    INNER JOIN Students_with_special_need Sw ON Sw.sid = S.sid 
+    INNER JOIN Rooms R ON R.rid = S.rid
+WHERE R.floor = 2
+
+--10. Double Room on the left in each floor that has at least 2 rooms
+SELECT R.rid
+FROM Rooms R
+INNER JOIN Double_rooms D ON D.rid = R.rid AND D.position = 0
+GROUP BY R.floor
+HAVING COUNT(*) > 1
+
+--10. All colleges
 SELECT *
 FROM Colleges C;
 
