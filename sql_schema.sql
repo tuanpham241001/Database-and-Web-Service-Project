@@ -1,7 +1,11 @@
+CREATE DATABASE IF NOT EXISTS Housing;
+
+USE Housing;
+
 CREATE TABLE Colleges(
     cid CHAR(8),
     name CHAR(12),
-    adress CHAR(30),
+    address CHAR(30),
     PRIMARY KEY (cid)
 );
 
@@ -10,7 +14,7 @@ CREATE TABLE Rooms(
     rnumber CHAR(5),
     floor INT,
     mailbox CHAR(5),
-    availabilty BIT,
+    availability BIT,
     cid CHAR(8) NOT NULL,       
     PRIMARY KEY (rid), 
     FOREIGN KEY (cid) REFERENCES Colleges(cid)
@@ -57,7 +61,7 @@ CREATE TABLE Managers(
 
 
 CREATE TABLE RA(
-    availabilty BIT,
+    availability BIT,
     mgid CHAR(8),
     PRIMARY KEY (mgid),
     FOREIGN KEY (mgid) REFERENCES Managers(mgid)   
