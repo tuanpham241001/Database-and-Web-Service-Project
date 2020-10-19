@@ -8,12 +8,7 @@ html {
 body{
     /* background-color: white ; */
     /* background-image: -moz-repeating-linear-gradient(); */
-    text-align: center;
-}
-
-.logo{
-    border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
+    background-color: aliceblue;
+    color: #003153;
+    margin: auto 15px;
 }
