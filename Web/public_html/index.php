@@ -11,7 +11,7 @@ include("./config/db_connect.php")
   <h3>Living on Campus</h3>
   </div>
   <div class="container-fluid">
-    <p>
+    <p c>
       Do you want to live in a student residence, in a shared or single room??
       Of course, only you decide where and how you want to live: You have plenty of choices with Saturn Housing!
     </p>
@@ -34,9 +34,9 @@ include("./config/db_connect.php")
       <div class="card">
         <img src="./img/krupp.jpeg" alt="Krupp" style="width:100%">
         <div class="container">
-          <h2>Krupp College</h2>
+          <h2 style="color: red;">Krupp College</h2>
           <p class="title">Who's on fire?</p>
-          <p>As the oldest college we value our traditions and connections!.</p>
+          <p style = "font-">As the oldest college we value our traditions and connections!</p>
         </div>
       </div>
     </div>
@@ -45,18 +45,18 @@ include("./config/db_connect.php")
       <div class="card">
         <img src="./img/mercator.jpeg" alt="Mercator" style="width:100%">
         <div class="container">
-          <h2>Mercator College</h2>
+          <h2 style= "color: blue">Mercator College</h2>
           <p class="title">Awasawasa!</p>
           <p>Artistic we are!</p>
         </div>
       </div>
-    </div>
+    </div>;
 
     <div class="col">
       <div class="card">
         <img src="./img/college3.jpeg" alt="College III" style="width:100%">
         <div class="container">
-          <h2>College 3</h2>
+          <h2 style= "color: green">College 3</h2>
           <p class="title">Oh yeah, C3 yeah!</p>
           <p>We are the most fun college!</p>
         </div>
@@ -67,7 +67,7 @@ include("./config/db_connect.php")
       <div class="card">
         <img src="./img/nordmetall.jpg" alt="Nordmetall" style="width:100%">
         <div class="container">
-          <h2>Nord College</h2>
+          <h2 style= "color: Yellow">Nord College</h2>
           <p class="title">Ice! Ice! Ice!</p>
           <p>We are the biggest and newest college!</p>
         </div>
