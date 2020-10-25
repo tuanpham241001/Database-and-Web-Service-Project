@@ -1,14 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imprint</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/167933c97d.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' type='text/css' media='screen' href='./CSS/main.css'>
+</head>
+
+<body>
 
 
-
-<section id="header">
+  <section id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="./index.php">
         <img src="./img/saturn_blue.png" width="30" height="30" class="d-inline-block align-top " alt="logo">
         Saturn
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -24,8 +39,7 @@
             <a class="nav-link" href="./imprint.php">Imprint</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Colleges
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -35,7 +49,7 @@
               <a class="dropdown-item" href="./nordmetall.php">Nordmetall</a>
             </div>
           </li>
-          
+
         </ul>
         <!-- <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -44,4 +58,3 @@
       </div>
     </nav>
   </section>
-  
