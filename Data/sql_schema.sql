@@ -16,6 +16,7 @@ CREATE TABLE Rooms(
     mailbox CHAR(5),
     availability BIT,
     cid INT NOT NULL,       
+
     PRIMARY KEY (rid), 
     FOREIGN KEY (cid) REFERENCES Colleges(cid)
 );

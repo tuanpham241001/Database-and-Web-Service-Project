@@ -1,21 +1,21 @@
 --Table College 
-insert into Colleges(cid, name, address) values ('345RE', 'Krupp', 'College Ring 4');
-insert into Colleges(cid, name, address) values ('346TW', 'Nordmetall', 'College Ring 3');
-insert into Colleges(cid, name, address) values ('567WS', 'Mercator', 'College Ring 2');
-insert into Colleges(cid, name, address) values ('987TR', 'College III', 'College Ring 1');
+insert into Colleges(cid, name, address) values (345, 'Krupp', 'College Ring 4');
+insert into Colleges(cid, name, address) values (346, 'Nordmetall', 'College Ring 3');
+insert into Colleges(cid, name, address) values (567, 'Mercator', 'College Ring 2');
+insert into Colleges(cid, name, address) values (987, 'College III', 'College Ring 1');
 
 
 --Table Rooms
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('2345BG', 345, 3, '345TR', 0, '345RE');
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('2346BG', 345, 3, '345TO', 0, '345RE');
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('1234SA', 231, 2, '231DF', 1, '346TW');
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('P2X2SR', 189, 1, '189DS', 0, '346TW');
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('QWS232', 397, 3, '397WR', 1, '567WS');
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('POQ123', 256, 2, '256FT', 0, '987TR');
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('QW34SF', 194, 1, '194SA', 1, '345RE');
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('QW35SF', 194, 1, '194SB', 0, '345RE');
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('P3X4RW', 213, 2, '213AC', 1, '567WS');
-insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values('P3X5RW', 213, 2, '213AD', 0, '567WS');
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(1345, 345, 3, '345TR', 0, 345);
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(2346, 345, 3, '345TO', 0, 345);
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(1230, 231, 2, '231DF', 1, 346);
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(3212, 189, 1, '189DS', 0, 346);
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(1234, 397, 3, '397WR', 1, 567);
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(1235, 256, 2, '256FT', 0, 987);
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(1236, 194, 1, '194SA', 1, 345);
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(1237, 194, 1, '194SB', 0, 345);
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(1238, 213, 2, '213AC', 1, 567);
+insert into Rooms(rid, rnumber, floor, mailbox, availability, cid) values(1239, 213, 2, '213AD', 0, 567);
 
 --Table Double_rooms 
 insert into Double_rooms(rid, position) values ('2345BG',0);
@@ -28,16 +28,16 @@ insert into Double_rooms(rid, position) values ('P3X5RW',1);
 
 
 -- Table Students
-insert into Students(sid, name, mat_num,birthday, rsid, rid) values ('1034FF', 'Nurgun Rafizade', '35674', '24102001', NULL, '2346BG');
-insert into Students(sid, name, mat_num, birthday, rsid, rid) values ('2356DD', 'Aoge Bo', '24585', '12041999', NULL, 'QW35SF');
-insert into Students(sid, name, mat_num, birthday, rsid, rid) values ('4347QS', 'Jenni Lo', '33436', '12042001', NULL, 'P3X5RW');
-insert into Students(sid, name, mat_num, birthday, rsid, rid) values ('1053GF', 'Wail Bougida', '23454', '12092000', NULL, '1234SA');
-insert into Students(sid, name, mat_num,birthday, rsid, rid) values ('1034B7', 'Tuan Pham', '34567', '30082001', '1034FF','2345BG');
-insert into Students(sid, name, mat_num, birthday, rsid, rid) values ('1093QA', 'John Doe', '34525', '25081998', NULL, 'P2X2SR');
-insert into Students(sid, name, mat_num, birthday, rsid, rid) values ('3456FD', 'Jeng Lu', '33145', '12041997', NULL, 'QWS232');
-insert into Students(sid, name, mat_num, birthday, rsid, rid) values ('2345RD', 'Sergey Lav', '43456', '15072001', NULL, 'POQ123');
-insert into Students(sid, name, mat_num, birthday, rsid, rid) values ('1053RD', 'Nayan Pradhan', '23384', '30032002', '2356DD', 'QW34SF');
-insert into Students(sid, name, mat_num, birthday, rsid, rid) values ('1563QB', 'Jane Doe', '36536', '24082000', '4347QS', 'P3X4RW');
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (1034, 'Nurgun Rafizade', '35674', '24102001', NULL, 2346);
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (2356, 'Aoge Bo', '24585', '12041999', NULL, 1230);
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (4347, 'Jenni Lo', '33436', '12042001', NULL, 1235);
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (1053, 'Wail Bougida', '23454', '12092000', NULL, 1234);
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (1035, 'Tuan Pham', '34567', '30082001', 1034, 2346);
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (1093, 'John Doe', '34525', '25081998', NULL, 1236);
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (3456, 'Jeng Lu', '33145', '12041997', NULL, 1239);
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (2345, 'Sergey Lav', '43456', '15072001', NULL, 3212);
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (1059, 'Nayan Pradhan', '23384', '30032002', 2356, 1230);
+insert into Students(sid, name, mat_num, birthday, rsid, rid) values (1563, 'Jane Doe', '36536', '24082000', 4347, 1235);
 
 
 
