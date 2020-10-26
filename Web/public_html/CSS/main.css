@@ -11,13 +11,16 @@ body{
     text-align: center;
     background-color: aliceblue;
     color: #003153;
-    background-image: url("../img/best.jpg"); 
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-
+    height:100vh; 
+    margin:0;
+ 
 }
 
+/* Trick */
+body{ 
+  display:flex; 
+  flex-direction:column; 
+}
 .container-fluid {
     padding-top: 50px;
     padding-right: 80px;
@@ -27,18 +30,19 @@ body{
     overflow: auto;
 }
 
-
 .testimonial-image{
-    height: 0px;
-
+    height: 150px;
 }
-
 
 #footer {
     background-color: #003153;
     color: white;
-    margin: 0;
     padding: 0;
+    clear: both;
+    position: relative;
+    height: 180px;
+    margin-top:auto; 
+    margin-bottom: 0;
 }
 
 .logo{
@@ -49,38 +53,35 @@ body{
     columns: #003153;
     }
 
-
 #header {
-    color: rgb(30, 17, 105);
+    background-color: #003153;
+    color: white;
     margin: 0;
     padding: 0;
 }
 
 h3 {
     text-decoration: underline;
-    font-family:"Trebuchet MS";
 }
 h1 {
-    text-shadow: 2px 1px;
-}
-
-.nav-styling{
-    background-image: url("../img/cloud.jpg");
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-
+    text-shadow: 2px 2px;
 }
 
 
+.form-custom {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: 0 auto;
+  }
 
+  #imprint{
+      text-align: left;
+  }
 
-.WebContainer{
-    background-color: #f195dd;
-    width:100%;
-    min-width:1000px;
-    height:auto;
-} 
-  
-
-
+.maintenance{
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: 0 auto;
+}

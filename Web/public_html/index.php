@@ -1,31 +1,25 @@
-<?php
-include("./config/db_connect.php")
+<?php  
+  include("./config/db_connect.php")
 ?>
 
+<!DOCTYPE html>
+<html>
 
-<?php include 'templates/header.php' ?>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Saturn</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/167933c97d.js" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' type='text/css' media='screen' href='./CSS/main.css'>
+  <!-- <script src='main.js'></script> -->
 
-<section id="introduction">
-  <h1>Feel at home</h1>
-  <h1>Away from home!</h1>
-  <h3>Living on Campus</h3>
-  </div>
-  <div class="container-fluid">
-    <p c>
-      Do you want to live in a student residence, in a shared or single room??
-      Of course, only you decide where and how you want to live: You have plenty of choices with Saturn Housing!
-    </p>
-    <p>
-      In the immediate vicinity of the campus, we offer 4 colleges to live in: Krupp, Mercator, College III,
-      Nordmetall.
-      Often the housing question boils down to your preferences, special needs etc.
-    </p>
-    <p>
-      Login to our Housing Portal to register and get the best accomodation in Bremen!
-    </p>
-    <button type="button" class="btn btn-primary">Log in </button>
-  </div>
-</section>
+</head>
 
 <body>
   <?php include 'templates/header.php'?>  
@@ -147,3 +141,6 @@ include("./config/db_connect.php")
 </section>
 
 <?php include 'templates/footer.php' ?>
+
+</body>
+</html>

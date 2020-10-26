@@ -1,22 +1,21 @@
-CREATE DATABASE IF NOT EXISTS Housing;
+CREATE DATABASE IF NOT EXISTS group19;
 
 USE Housing;
 
 CREATE TABLE Colleges(
     cid INT NOT NULL AUTO_INCREMENT,
-    name CHAR(12),
+    name CHAR(12) UNIQUE,
     address CHAR(30),
     PRIMARY KEY (cid)
 );
 
 CREATE TABLE Rooms(
     rid INT NOT NULL AUTO_INCREMENT,
-    rnumber CHAR(5),
+    rnumber CHAR(5) UNIQUE,
     floor INT,
     mailbox CHAR(5),
     availability BIT,
     cid INT NOT NULL,       
-
     PRIMARY KEY (rid), 
     FOREIGN KEY (cid) REFERENCES Colleges(cid)
 );
@@ -31,7 +30,7 @@ CREATE TABLE Double_rooms(
 CREATE TABLE Students(
     sid INT NOT NULL AUTO_INCREMENT,
     name CHAR(30),
-    mat_num CHAR(8),
+    mat_num CHAR(8) UNIQUE,
     birthday CHAR(8),
     rid INT,
     rsid INT,
@@ -52,7 +51,7 @@ CREATE TABLE Students_with_special_need(
 
 CREATE TABLE Managers(
     mgid INT NOT NULL AUTO_INCREMENT,
-    name CHAR(30),
+    name CHAR(30) UNIQUE,
     age INT,
     contact_num CHAR(12), 
     cid INT,
