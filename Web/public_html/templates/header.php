@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 
   <section id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">

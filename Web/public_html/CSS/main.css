@@ -11,7 +11,11 @@ body{
     text-align: center;
     background-color: aliceblue;
     color: #003153;
- 
+    background-image: url("../img/best.jpg"); 
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+
 }
 
 .container-fluid {
@@ -23,10 +27,11 @@ body{
     overflow: auto;
 }
 
-.testimonial-image{
-    height: 150px;
-}
 
+.testimonial-image{
+    height: 0px;
+
+}
 
 
 #footer {
@@ -36,7 +41,6 @@ body{
     padding: 0;
 }
 
-
 .logo{
     border: 1px solid aliceblue;
     border-radius: 4px;
@@ -45,32 +49,34 @@ body{
     columns: #003153;
     }
 
+
 #header {
-    background-color: #003153;
-    color: white;
+    color: rgb(30, 17, 105);
     margin: 0;
     padding: 0;
 }
 
 h3 {
     text-decoration: underline;
+    font-family:"Trebuchet MS";
 }
 h1 {
-    text-shadow: 2px 2px;
+    text-shadow: 2px 1px;
 }
 
+.nav-styling{
+    background-image: url("../img/cloud.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
 
-
-
-
-
-
-
+}
 
 
 
 
 .WebContainer{
+    background-color: #f195dd;
     width:100%;
     min-width:1000px;
     height:auto;
