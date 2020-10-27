@@ -56,13 +56,13 @@ if (isset($_POST['submit'])) {
         // save to db and check
         if(mysqli_query($conn, $sql)) {
             header('Location: http://clabsql.clamv.jacobs-university.de/~tpham/maintenance/insert/feedback.php');
-            $_SESSION['msg'] = $name . ' inserted into the database.';
+            $_SESSION['msg'] = 'Room inserted into the database.';
             
             
         } else {
             header('Location: http://clabsql.clamv.jacobs-university.de/~tpham/maintenance/insert/feedback.php');
             $_SESSION['flag'] = 1;
-            $_SESSION['msg'] = 'Failed to insert ' . $name . ': ' . $conn->error;
+            $_SESSION['msg'] = 'Failed to insert Room: ' . $conn->error;
         }
     }
 } // end POST check
