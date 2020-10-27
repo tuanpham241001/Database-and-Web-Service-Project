@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     } else {
         $rnumber = $_POST['rnumber'];
         if (!preg_match('/^[A-Z0-9\s]{5}$/', $rnumber)) {
-            $errors['rnumber'] = 'rnumber must be 3-digit numbers only';
+            $errors['rnumber'] = 'Room number must be a combination of 2 letters and 3 digits e.g NB123';
         }
     }
 
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
     } else {
         $mailbox = $_POST['mailbox'];
         if (!preg_match('/^[A-Z0-9\s]{5}$/', $mailbox)) {
-            $errors['mailbox'] = 'mailbox must be 3-digit number only';
+            $errors['mailbox'] = 'Mailbox number must be a combination of 2 letters and 3 digits e.g NB123';
         }
     }
 
