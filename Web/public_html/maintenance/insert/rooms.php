@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
         $errors['floor'] = 'A floor number is required';
     } else {
         $floor = $_POST['floor'];
-        if (!preg_match('/^[0-9]$/D', $floor)) {
+        if (!preg_match('/^[1-3]$/D', $floor)) {
             $errors['floor'] = 'Floor number one-digit number only';
         }
     }

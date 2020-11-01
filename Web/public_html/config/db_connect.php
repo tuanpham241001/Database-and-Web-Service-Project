@@ -1,11 +1,11 @@
 <?php 
 
 	// connect to the database
-	$conn = new mysqli('localhost','group19','pXHcA0', 'group19');
-	// $link = ('localhost','group9','xNs1UQ', 'group9');
+	// $conn = new mysqli('localhost','group19','pXHcA0', 'group19');
+	$conn = new mysqli('localhost','tuanpham', 'test1234', 'Housing' );
 	if($conn->connect_error) {
-		echo '<span style="color:red;">Could not connect to database server:</span><br>';
-		echo '<span style="color:red;">'. $link->connect_error .'</span><br>';
+		echo '<div>Could not connect to database server:</div>';
+		echo '<div>'. $conn->connect_error .'</div>';
 	}
 	if (!session_id()) {
 		session_start();
