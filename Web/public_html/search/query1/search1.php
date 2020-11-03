@@ -64,7 +64,7 @@
 <?php include('../templates/header.php'); ?>
 
     <section class="container">
-        <h4 class="">Search for the Managers that manage the college</h4>
+        <h4 class="">Search for the RAs that manage the college</h4>
         <form class="form-custom" action="result1.php" method="POST">
 
             <div class="form-group">
