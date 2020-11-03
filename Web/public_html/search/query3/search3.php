@@ -61,8 +61,7 @@
 <body>
 
 
-    <?php include('../../maintenance/templates/header.php'); ?>
-
+<?php include('../templates/header.php'); ?>
     <section class="container">
         <h4 class="">Search for available room in a college</h4>
         <form class="form-custom" action="result3.php" method="POST">
@@ -81,7 +80,7 @@
 
 
 
-    <?php include('../../maintenance/templates/footer.php'); ?>
+    <?php include('../templates/footer.php'); ?>
 
 </body>
 

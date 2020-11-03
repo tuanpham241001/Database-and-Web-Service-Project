@@ -19,7 +19,7 @@ include('../../config/db_connect.php');
 <body>
 
 
-    <?php include('../../maintenance/templates/header.php'); ?>
+<?php include('../templates/header.php'); ?>
 
     <h1>Result page</h1>
     <?php
@@ -67,7 +67,7 @@ include('../../config/db_connect.php');
 
 
     ?>
-    <?php include('../../maintenance/templates/footer.php'); ?>
+    <?php include('../templates/footer.php'); ?>
 
 
 

@@ -61,7 +61,7 @@
 <body>
 
 
-    <?php include('../../maintenance/templates/header.php'); ?>
+<?php include('../templates/header.php'); ?>
 
     <section class="container">
         <h4 class="">Search for the Managers that manage the college</h4>
@@ -81,7 +81,7 @@
 
 
 
-    <?php include('../../maintenance/templates/footer.php'); ?>
+    <?php include('../templates/footer.php'); ?>
 
 </body>
 

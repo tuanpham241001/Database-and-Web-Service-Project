@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input</title>
+    <title>Search</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type='text/css' media='screen' href='../CSS/main.css'>
 </head>
@@ -42,13 +42,13 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./maintenance.php">Maintenance Page</a>
+                    <a class="nav-link" href="../maintenance/maintenance.php">Maintenance Page</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../search/search.php">Search Page</a>
+                    <a class="nav-link" href="search.php">Search Page</a>
                     </li>
                 </ul>
-
+                
                 <!-- <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -60,14 +60,9 @@
 
 
     <div class="list-group maintenance">
-        <a href="insert/colleges.php" class="list-group-item list-group-item-action">Add Colleges</a>
-        <a href="insert/students.php" class="list-group-item list-group-item-action">Add Students</a>
-        <a href="insert/students_with_special_need" class="list-group-item list-group-item-action">Add Students with special need (On existing Students)</a>
-        <a href="insert/rooms.php" class="list-group-item list-group-item-action">Add Rooms</a>
-        <a href="insert/double_rooms.php" class="list-group-item list-group-item-action">Add Double Rooms(On existing Rooms)</a>
-        <a href="insert/managers.php" class="list-group-item list-group-item-action">Add Managers</a>
-        <a href="insert/ra.php" class="list-group-item list-group-item-action">Add RA (On existing Managers)</a>
-        <a href="insert/rm.php" class="list-group-item list-group-item-action">Add RM (On existing Managers)</a>
+        <a href="query1/search1.php" class="list-group-item list-group-item-action">Query1: RA that manages a specific college </a>
+        <a href="query2/search2.php" class="list-group-item list-group-item-action">Query2: Students who live in a specific floor</a>
+        <a href="query3/search3.php" class="list-group-item list-group-item-action">Query3: Available room in a specific college</a>
     </div>
 
     <?php include 'templates/footer.php' ?>

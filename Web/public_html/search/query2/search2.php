@@ -61,7 +61,7 @@
 <body>
 
 
-    <?php include('../../maintenance/templates/header.php'); ?>
+<?php include('../templates/header.php'); ?>
 
     <section class="container">
         <h4 class="">Search for all students who live in a specific floor</h4>
@@ -81,8 +81,7 @@
 
 
 
-    <?php include('../../maintenance/templates/footer.php'); ?>
-
+    <?php include('../templates/footer.php'); ?>
 </body>
 
 </html>

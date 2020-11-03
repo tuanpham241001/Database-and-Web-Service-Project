@@ -1,3 +1,0 @@
-query1: RA that manages a college
-query2: Students who live in a specific (3) floor (query 13)
-query3: Count the number of available rooms in a college and print out the result as well (modified)

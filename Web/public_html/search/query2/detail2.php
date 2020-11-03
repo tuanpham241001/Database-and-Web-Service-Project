@@ -20,7 +20,7 @@ include('../../config/db_connect.php');
 <body>
 
 
-    <?php include('../../maintenance/templates/header.php'); ?>
+<?php include('../templates/header.php'); ?>
 
     <div class="">
         <?php
@@ -60,7 +60,7 @@ include('../../config/db_connect.php');
 
 
 
-    <?php include('../../maintenance/templates/footer.php'); ?>
+    <?php include('../templates/footer.php'); ?>
 
 </body>
 
