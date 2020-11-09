@@ -1,3 +1,11 @@
+<?php
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+  
+}else{
+  header("location: ../../login.php");
+  exit;
+}
+?>
 <!-- mgid, availability -->
 
 <!-- When adding new rooms -> Default of availability: 0 (not occupied) -->

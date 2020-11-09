@@ -1,3 +1,11 @@
+<?php
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+  
+}else{
+  header("location: ../../login.php");
+  exit;
+}
+?>
 <!-- mgid, office_hour -->
 
 <!-- When adding new rooms -> Default of office_hour: 0 (not occupied) -->
