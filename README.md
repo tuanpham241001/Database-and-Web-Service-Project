@@ -8,6 +8,9 @@ If you go to the Maintenance page and not log in, you are directed to the Login 
 You can log out using the logout in the navigation bar
 
 
+Credentials:
+
+
 username: group19
 
 password: test12345
