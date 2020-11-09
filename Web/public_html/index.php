@@ -2,27 +2,7 @@
   include("./config/db_connect.php")
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Saturn</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  
-  <!-- Icons -->
-  <script src="https://kit.fontawesome.com/167933c97d.js" crossorigin="anonymous"></script>
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel='stylesheet' type='text/css' media='screen' href='./CSS/main.css'>
-  <!-- <script src='main.js'></script> -->
-
-</head>
-
-<body>
-  <?php include 'templates/header.php'?>  
+<?php include 'templates/header.php'?>  
 
 
 <section id="introduction">
@@ -43,7 +23,6 @@
     <p>
       Login to our Housing Portal to register and get the best accomodation in Bremen!
     </p>
-    <button type="button" class="btn btn-primary">Log in </button>
   </div>
 </section>
 

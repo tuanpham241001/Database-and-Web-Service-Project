@@ -1,5 +1,4 @@
 <?php 
-
 	// connect to the database
 	$conn = new mysqli('localhost','group19','pXHcA0', 'group19');
 	// $conn = new mysqli('localhost','tuanpham', 'test1234', 'Housing' );
@@ -7,8 +6,3 @@
 		echo '<div>Could not connect to database server:</div>';
 		echo '<div>'. $conn->connect_error .'</div>';
 	}
-	if (!session_id()) {
-		session_start();
-	}
-
-?>

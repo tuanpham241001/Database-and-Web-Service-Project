@@ -1,4 +1,15 @@
+<?php session_start(); ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturn</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='./CSS/main.css'>
+</head>
+<body>
   <section id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="./index.php">
@@ -20,23 +31,28 @@
           <li class="nav-item">
             <a class="nav-link" href="./imprint.php">Imprint</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Colleges
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./krupp.php">Krupp</a>
-              <a class="dropdown-item" href="./mercator.php">Mercator</a>
-              <a class="dropdown-item" href="./college3.php">College3</a>
-              <a class="dropdown-item" href="./nordmetall.php">Nordmetall</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="./maintenance.php">Maintenance Page</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="maintenance/maintenance.php">Maintenance Page</a>
+            <a class="nav-link" href="./search.php">Search Page</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="search/search.php">Search Page</a>
-          </li>
+
+          <?php
+          if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+            echo " 
+          <li class='nav-item'>
+            <a class='nav-link' href='./logout.php'> Log out</a>
+          </li>";
+          }else{
+            echo " 
+          <li class='nav-item'>
+            <a class='nav-link' href='./login.php'> Log in</a>
+          </li>";
+          }
+
+          
+          ?>
         </ul>
         <!-- <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

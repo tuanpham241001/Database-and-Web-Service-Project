@@ -78,7 +78,7 @@
 		<form class="form-custom" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 		
 		<div class="form-group">
-		<label>College Name</label>
+			<label>College Name</label>
 			<input type="text" class="form-control" name="name" value="<?php echo htmlspecialchars($name) ?>">
 			<div class=""><?php echo $errors['name']; ?></div>
 		</div>
