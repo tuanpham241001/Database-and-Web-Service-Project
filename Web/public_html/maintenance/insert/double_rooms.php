@@ -1,3 +1,6 @@
+<?php include('../templates/header.php'); ?>
+
+
 <!-- rid, position -->
 
 <!-- When adding new rooms -> Default of availability: 0 (not occupied) -->
@@ -57,22 +60,8 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html>
 
-<head>
-
-    <title>Add Double Rooms</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type='text/css' media='screen' href='../../CSS/main.css'>
-</head>
-
-
-<body>
-
-    <?php include('../templates/header.php'); ?>
-
+    
     <section class="container ">
         <h4 class="">Add a Double Room</h4>
 
