@@ -1,139 +1,170 @@
 """
-Need to install sshpass
+To run the code, you need to check for the packages:
+    Need to install sshpass on Linux if you do not have it 
 
-pip3 install apache_log_parser
-pip3 install pandas
-pip3 install matplotlib
+And run these commands if you do not have any of the library
+    pip3 install apache_log_parser
+    pip3 install pandas
+    pip3 install matplotlib
 
 """
 import os
 import apache_log_parser
-import pandas as pd
 import getpass
+import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import numpy as np
 import matplotlib.dates as mdates
 from collections import Counter
 from datetime import datetime
 from matplotlib.backends.backend_pdf import PdfPages
 
-
-def get_log_file():
+def clamv_access():
     """
-    This function
+    This function helps go to clamv from desktop and into folder apache 
+    download the files (access_log and ) to local machine
     """
     uname = input("Clamv username = ")
     passwd = getpass.getpass("Password = ")
-
     passwd = str(passwd)
-
+    #Download the log files
     st1 = 'sshpass -p '+passwd+' scp '+uname + \
         '@clabsql.clamv.jacobs-university.de:/../../var/log/apache2/access_log ./'
     os.system(st1)
+    #Download the error files
+    st1 = 'sshpass -p '+passwd+' scp '+uname + \
+        '@clabsql.clamv.jacobs-university.de:/../../var/log/apache2/error_log ./'
+    os.system(st1)
 
-    # get log files in the same directory as that of the script file
-    return
-
-
-def get_data_page(data, page):
-    print("\n\nData for", page)
-
-    store = []
+def page_log(log, page):
     ip_address_list = []
     date_list = []
     browser_list = []
 
-    for x in data:
-        dicts = {}
+    for x in log:
         if((x['request_url']) == page):
-            dicts['browser'] = x['request_header_user_agent__browser__family']
-            dicts['ip_address'] = x['remote_host']
-            dicts['date'] = x['time_received_isoformat']
-
             ip_address_list.append(x['remote_host'])
             date_list.append(x['time_received_isoformat'])
-            browser_list.append(
-                x['request_header_user_agent__browser__family'])
-
-            store.append(dicts)
+            browser_list.append(x['request_header_user_agent__browser__family'])
     
-
-    # creates a dictionary in which key=one item and value = no. of times the item appears in the list
     return (ip_address_list, date_list, browser_list)
 
 
-def timeline_plot(pdf,page, ip_address_list, date_list, browser_list):
+
+def timeline_plot(name, pdf, page, ip_address_list, date_list, browser_list):
     dates = [datetime.strptime(d[:10], "%Y-%m-%d") for d in date_list]
     
-    # Choose some nice levels just to visualize the different
-    levels = np.tile([-5, 5, -3, 3, -1, 1],
-                    int(np.ceil(len(dates)/6)))[:len(dates)]
+    # The levels array here acts like a counting function!
+    levels = []
+    levels.append(1)
+    for i in range(1, len(dates)):
+        if dates[i] == dates[i-1]:
+            levels.append(levels[i-1]+1)
+        else:
+            levels.append(1)
+
 
     # Create figure and plot a stem plot with the date
-    fig, ax = plt.subplots(figsize=(8.8, 4), constrained_layout=True)
-    ax.set(title="Log of page: " + page)
+    fig, ax = plt.subplots(figsize=(10, 4))
+    
+    markerline, stemline, baseline = ax.stem(dates, levels,
+                                         linefmt="C3-", basefmt="k-",
+                                         use_line_collection=True)
 
-    ax.vlines(dates, 0, levels, color="tab:red")  # The vertical stems.
+    plt.setp(markerline, mec="k", mfc="w", zorder=3)
+    # The vertical stems. Red for error, Green for access
+    if(name=="Access"):
+        ax.vlines(dates, 0, levels, color="tab:green")
+    else:
+        ax.vlines(dates, 0, levels, color="tab:red")  
     ax.plot(dates, np.zeros_like(dates), "-o",
             color="k", markerfacecolor="w")  # Baseline and markers on it.
 
     # annotate lines
     for d, l, i, b in zip(dates, levels, ip_address_list, browser_list):
-        ax.annotate(i+" " +b, xy=(d, l))
+        ax.annotate(" "+i+" - " +b, xy=(d, l), fontsize='small')
 
     # format xaxis with 1 day intervals
     ax.xaxis.set_major_locator(mdates.DayLocator(interval=1))
     ax.get_xaxis().set_major_formatter(mdates.DateFormatter("%d %m %Y"))
     plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
 
-    # remove y axis and spines
-    ax.get_yaxis().set_visible(False)
+    #format yaxis to display only integers
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+
+    # remove spines
     for spine in ["left", "top", "right"]:
         ax.spines[spine].set_visible(False)
 
-    ax.margins(y=0.1)
+    #Label and title
+    ax.set(xlabel='Day', ylabel='Number of access',
+        title= name + " log of page: " + page)
+    plt.tight_layout()
+
     pdf.savefig()
     plt.close()
     
 
-# main function starts here
+def summary_plot(pdf, cnt):
+    c = dict(cnt)
+    count = c.values()
+    plt.rcdefaults()
+    fig, ax = plt.subplots(figsize=(10, 4))
+    y_pos = np.arange(len(c))
+    ax.barh(y_pos, count, align='center')
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels(c)
+    ax.invert_yaxis()  # labels read top-to-bottom
+    ax.set_xlabel('Number of access')
+    ax.set_title('Summary of Access Log')
+    plt.tight_layout()
+    pdf.savefig()
+
 def main():
 
-    get_log_file()
-
-    fil = open("access_log", "r")
-
+    clamv_access()
+    file1 = open("access_log", "r")
     line_parser = apache_log_parser.make_parser(
         "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"")
-    # from the apache log website
 
+    logs = []
+    access_pages = []
     errors = []
-    data = []
-    log_line_data = {}
+    error_pages = []
+    log_line = {}
+    cnt = Counter()
 
-    for line in fil:
+    for line in file1:
         # find returns -1 if it does not find the searched word in the line
         # since we only need the data for the main pages not css and images we search for the line that only has the main pages
-        if (line.find('~tpham') != -1 and line.find('css') == -1 and line.find('js') == -1 and line.find('img') == -1):
-            log_line_data = line_parser(line)
+        if (line.find('~tpham') != -1 and line.find('css') == -1 and line.find('js') == -1 and line.find('img') == -1 and line.find('title') == -1 and line.find('id') == -1):
+            log_line = line_parser(line)
 
-            if(int(log_line_data['status']) >= 400):  # all status > 400 are error
+            # all status > 400 are error
+            if(int(log_line['status']) >= 400):  
                 # all the errors are stored in a separate list
-                errors.append(log_line_data)
+                errors.append(log_line)
 
-            data.append(log_line_data)
+            logs.append(log_line)
 
-    page_list = []
+    for x in logs:
+        if (x['request_url'] not in access_pages):
+            access_pages.append(x['request_url'])
 
-    for x in data:
-        if (x['request_url'] not in page_list):
-            page_list.append(x['request_url'])
+    for x in errors:
+        if (x['request_url'] not in error_pages):
+            error_pages.append(x['request_url'])
 
-    with PdfPages("Access_log.pdf") as pdf:
-        for page in page_list:
-            ip_address_list, date_list, browser_list = get_data_page(data, page)
-            timeline_plot(pdf, page, ip_address_list, date_list, browser_list)
+    with PdfPages("Log_statistics.pdf") as pdf:
+        for page in access_pages:
+            ip_address_list, date_list, browser_list = page_log(logs, page)
+            timeline_plot("Access",pdf, page, ip_address_list, date_list, browser_list)
+            cnt[page] = len(ip_address_list)
+        
+        summary_plot(pdf, cnt)
+        for page in error_pages:
+            ip_address_list, date_list, browser_list = page_log(logs, page)
+            timeline_plot("Error", pdf, page, ip_address_list, date_list, browser_list)
             
-    
-
 main()
