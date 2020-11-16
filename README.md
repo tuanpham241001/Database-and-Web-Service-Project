@@ -29,4 +29,4 @@ The codes and diagrams for log analysis can be found under the Web/Log_analysis
 We have checked into the error_log file but we have not had any error stored on that page (because we only uploaded the webiste after checking everything). On the other hand, we found some errors on the access_log page and decided to plot it instead. 
 
 The code can be run on normal desktop, we have a function to download files from CLAMV server. There are some libraries in Python that we used and you may need to install it:
-(apache_log_parser, pandas, matplotlib) and sshpass on Linux. You can find more information at the comment on top of the page
+(apache_log_parser, pandas, matplotlib) on Python and sshpass on Linux. You can find more information at the comment on top of the page
