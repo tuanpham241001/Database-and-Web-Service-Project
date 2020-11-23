@@ -4,21 +4,6 @@ include('../../config/db_connect.php');
 
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-
-    <title>Search 1</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type='text/css' media='screen' href='../../CSS/main.css'>
-</head>
-
-
-<body>
-
-
 <?php include('../templates/header.php'); ?>
 
     <h1>Result page</h1>

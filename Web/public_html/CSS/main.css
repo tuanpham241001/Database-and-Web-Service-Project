@@ -87,3 +87,12 @@ h1 {
 }
 
 .wrapper{ width: 350px; padding: 20px; }
+
+#collegeList ul {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#collegeList li {
+    padding: 12px;
+}
