@@ -41,3 +41,8 @@ Demo page: http://clabsql.clamv.jacobs-university.de/~tpham/demo/
 Code for demos can be found: Web/public_html/Demo
 
 Also, since our search page only has one field "College name" where we can incorporate this suggestion, so we only modify that field in our search page. To test the functionality: http://clabsql.clamv.jacobs-university.de/~tpham/search/query1/search1.php and start typing (me -> College Nordmetall and Mercator)
+
+
+# HW11 note:
+
+The link to the website with map: http://clabsql.clamv.jacobs-university.de/~tpham/map.php
