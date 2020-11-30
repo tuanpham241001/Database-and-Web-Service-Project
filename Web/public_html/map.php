@@ -41,14 +41,14 @@
   <div id="map"></div>
 
   <script>
-    const mymap = L.map('map').setView([0, 0], 1);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mymap);
-
 
     var latitude = <?php echo $latitude ?>;
     var longitude = <?php echo $longitude ?>;
+
+    const mymap = L.map('map').setView([latitude, longitude], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
 
     var myIcon = L.divIcon({ 
     iconSize: new L.Point(100, 50), 
